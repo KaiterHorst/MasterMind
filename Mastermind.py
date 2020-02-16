@@ -57,13 +57,6 @@ if optie == '1':
             if Gokken[i] in PCcode and Gokken[i] != PCcode[i]:
                 Wit += 1
 
-
-
-
-
-
-
-
         print('Je hebt', Zwart,'aantal pinnen op de juiste positie.'
             '\nJe hebt', Wit, ' kleuren goed maar op de foute positie')
 
