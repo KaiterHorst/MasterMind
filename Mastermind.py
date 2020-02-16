@@ -13,14 +13,10 @@ if optie == '1':
     print('\n''De kleuren waaruit je kan kiezen zijn: Rood, Blauw, Groen, Geel, Oranje en Paars\n')
     kleuren = ['Rood', 'Blauw', 'Groen', 'Geel', 'Oranje', 'Paars']
     PCcode = []
-    PCkleur1 = random.choice(kleuren)
-    PCkleur2 = random.choice(kleuren)
-    PCkleur3 = random.choice(kleuren)
-    PCkleur4 = random.choice(kleuren)
-    PCcode.append(PCkleur1)
-    PCcode.append(PCkleur2)
-    PCcode.append(PCkleur3)
-    PCcode.append(PCkleur4)
+
+    for i in range(4):
+      PCcode.append(random.choice(kleuren))
+
     print(PCcode)
     for i in range(1,11):
         Gokken = []
@@ -51,6 +47,7 @@ if optie == '1':
         Zwart = 0  # Goede kleur, Goede plek
         Wit = 0  # Goede kleur, foute plek
         print(Gokken)
+
         for i in range(4):
             if Gokken[i] == PCcode[i]:
                 Zwart += 1
@@ -63,4 +60,10 @@ if optie == '1':
         if Zwart == 4:
             print('Je hebt binnen 10 zetten gewonnen!')
             break
-    print('Helaas, je beurten zijn op.')
+    if Zwart != 4:
+        print('Helaas, je beurten zijn op.\n Nog een keertje proberen?')
+
+
+'''Optie 2'''
+if optie == '2':
+    print(2)
