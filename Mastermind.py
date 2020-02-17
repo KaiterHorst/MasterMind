@@ -1,17 +1,20 @@
 import random
 ''' interface gedeelte'''
-print('Kies een optie.')
+print('Dit zijn de keuzes:'
+      '\n=======================================================================')
 print(  'Optie 1: De computer kiest een patroon en jij gokt'
         '\nOptie 2: Kies zelf een patroon en de computer gokt, implementatie 1'
         '\nOptie 3: Kies zelf een patroon en de computer gokt, implementatie 2'
-        '\nOptie 4: Kies zelf een patroon en de computer gokt, eige implementatie')
+        '\nOptie 4: Kies zelf een patroon en de computer gokt, eige implementatie'
+        '\n======================================================================='
+        '\nKies 1, 2, 3 of 4')
 
 optie = input(('Maak een keuze:'))
 
 ''' Optie 1'''
 if optie == '1':
-    print('\n''De kleuren waaruit je kan kiezen zijn: Rood, Blauw, Groen, Geel, Oranje en Paars\n')
-    kleuren = ['Rood', 'Blauw', 'Groen', 'Geel', 'Oranje', 'Paars']
+    print('\n''De kleuren waaruit je kan kiezen zijn: Rood(R), Blauw(B), Groen(GR), Geel(G), Oranje(O) en Paars(P)\n')
+    kleuren = ['R', 'B', 'Gr', 'G', 'O', 'P']
     PCcode = []
 
     for i in range(4):
@@ -20,42 +23,25 @@ if optie == '1':
     print(PCcode)
     for i in range(1,11):
         Gokken = []
-        Gok1 = input('Eerste kleur?')
-        Gokken.append(Gok1)
-        while Gok1 not in kleuren:
-            print('Dit is geen geldige keuze, probeer opnieuw.')
-            Gok1 = input('Eerste kleur?')
+        while len(Gokken) < 4:
+            PlGok = input('Vul de combinatie in die jij denkt dat het is met spaties tussen de letters.\n Code:')
+            Gokken = PlGok.split(' ')
 
-        Gok2 = input('Tweede kleur?')
-        Gokken.append(Gok2)
-        while Gok2 not in kleuren:
-            print('Dit is geen geldige keuze, probeer opnieuw.')
-            Gok2 = input('Tweede kleur?')
-
-        Gok3 = input('Derde kleur?')
-        Gokken.append(Gok3)
-        while Gok3 not in kleuren:
-            print('Dit is geen geldige keuze, probeer opnieuw.')
-            Gok3 = input('Derde kleur?')
-
-        Gok4 = input('Vierde kleur?')
-        Gokken.append(Gok4)
-        while Gok4 not in kleuren:
-            print('Dit is geen geldige keuze, probeer opnieuw.')
-            Gok4 = input('Vierde kleur?')
-
-        Zwart = 0  # Goede kleur, Goede plek
-        Wit = 0  # Goede kleur, foute plek
         print(Gokken)
-
+        Zwart = 0
+        Wit = 0
+        Algebruikt = []
         for i in range(4):
             if Gokken[i] == PCcode[i]:
+                Algebruikt.append(Gokken[i])
                 Zwart += 1
-            if Gokken[i] in PCcode and Gokken[i] != PCcode[i]:
+
+        for j in range(4):
+            if Gokken[j] in PCcode and Gokken[j] != PCcode[j] and Gokken[j] not in Algebruikt:
                 Wit += 1
 
-        print('Je hebt', Zwart,'aantal pinnen op de juiste positie.'
-            '\nJe hebt', Wit, ' kleuren goed maar op de foute positie')
+        print('zwart:', Zwart,
+            '\nwit:', Wit,)
 
         if Zwart == 4:
             print('Je hebt binnen 10 zetten gewonnen!')
