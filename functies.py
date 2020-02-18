@@ -17,8 +17,8 @@ def pinchecker(Gokken, PCcode):
     Algebruikt = []
     for i in range(4):
         if Gokken[i] == PCcode[i]:
-            Algebruikt.append(Gokken[i])
             Zwart += 1
+            Algebruikt.append(Gokken[i])
 
     for j in range(4):
         if Gokken[j] in PCcode and Gokken[j] != PCcode[j] and Gokken[j] not in Algebruikt:
