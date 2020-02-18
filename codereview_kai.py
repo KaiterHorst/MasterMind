@@ -8,15 +8,15 @@ def combinatielijst(elementenlijst, lengte):
     return allecombinaties
 
 
-def pinchecker(Gok, PCcode):
+def pinchecker(Gokken, PCcode):
     Zwart = 0
     Wit = 0
     Algebruikt = []
     
     for i in range(4):
-        if Gok[i] == PCcode[i]: 
+        if Gokken[i] == PCcode[i]: 
             Zwart += 1
-            Algebruikt.append(Gok[i])
+            Algebruikt.append(Gokken[i])
             
         elif Gokken[j] in PCcode and Gokken[j] != PCcode[j] and Gokken[j] not in Algebruikt:: 
             Wit += 1
