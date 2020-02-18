@@ -8,7 +8,7 @@ def combinatielijst(elementenlijst, lengte):
     return allecombinaties
 
 
-elementenlijst = [1, 2, 3]
+
 
 
 def pinchecker(Gokken, PCcode):
