@@ -1,4 +1,3 @@
-antwoord = 'starten'
 while True:
     ''' interface gedeelte'''
     print('Dit zijn de keuzes:'
