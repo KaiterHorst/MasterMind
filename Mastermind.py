@@ -84,6 +84,7 @@ while True:
             PCfeedback = list(func.pinchecker(list(PCgok), code)) #feedback van de pc die gebruik maakt van de pincheckerfunctie
             PLfeedback = Witzwart                                 #feedback van de speler
 
+            for i in range(len(Overigemogelijkheden)):
 
 
 
