@@ -10,6 +10,11 @@ while True:
           '\nKies 1, 2, 3 of 4')
 
     optie = input(('Maak een keuze:'))
+    opties = ['1', '2', '3', '4']
+    while optie not in opties:
+        print('Dit is geen geldige keuze. Probeer 1, 2, 3 of 4.')
+        optie = input(('Maak een keuze:'))
+
 
     ''' Optie 1'''
     if optie == '1':
@@ -26,13 +31,12 @@ while True:
             PCcode.append(random.choice(kleuren))
 
         print(PCcode)
-        for i in range(1, 11):
-            Gokken = []
-            while len(Gokken) != 4:
-                PlGok = input('Vul jouw gok in met spaties tussen de kleuren:')
-                Gokken = PlGok.split(' ')
+        for i in range(10):
+
+            PlGok = input('Vul jouw gok in met spaties tussen de kleuren:')
+            Gokken = PlGok.split(' ')
+
             print(Gokken)
-            print(PCcode)
             print('zwart:', func.pinchecker(Gokken, PCcode)[1],
                   '\nwit:', func.pinchecker(Gokken, PCcode)[0])
 
@@ -40,11 +44,14 @@ while True:
                 print('Je hebt binnen 10 zetten gewonnen!')
                 break
 
+
         if func.pinchecker(Gokken, PCcode)[1] != 4:
             print('Helaas, je beurten zijn op. De code was,', PCcode, '\nNog een keertje proberen?')
 
         else:
             print('Nog een keertje spelen?')
+
+
 
     '''Optie 2'''
     if optie == '2':
@@ -71,7 +78,7 @@ while True:
             Overigemogelijkheden.append(Allemogelijkheden[i])
 
 
-        for i in range(11):
+        for i in range(10):
             PCgok = Overigemogelijkheden[0]
             print(PCgok)
             feedback = input('Geef feedback (wit, zwart):')
@@ -85,6 +92,28 @@ while True:
             PLfeedback = Witzwart                                 #feedback van de speler
 
             for i in range(len(Overigemogelijkheden)):
+                if PCfeedback == list(func.pinchecker(list(Overigemogelijkheden[i]), code)):
+                    Overigemogelijkheden.remove(Overigemogelijkheden[i])
+                else:
+                    continue
+
+            if PLfeedback and PCfeedback == [0, 4]:
+                print('De computer heeft het binnen 10 zetten geraden!')
+                break
+
+        if PLfeedback and PCfeedback != [0, 4]:
+            print('De computer heeft je code niet gekraakt'
+                '\nNog een keer spelen?')
+
+    '''Optie 3'''
+    if optie == 3:
+        print('Deze doet het helaas nog niet.\n'
+              'Kies optie 1 of 2')
+
+    '''Optie 3'''
+    if optie == 4:
+        print('Dze doet het helaas nog niet.\n'
+              'Kies optie 1 of 2 ')
 
 
 

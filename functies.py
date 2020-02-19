@@ -1,5 +1,6 @@
 def combinatielijst(elementenlijst,lengte):
 # Deze functie genereert een lijst met alle combinaties in (elementenlijst) met de lengte (lengte).
+#bron https://www.hackerrank.com/challenges/itertools-product/problem
     import itertools as it
     allecombinaties = []
 
