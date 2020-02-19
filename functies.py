@@ -9,10 +9,10 @@ def combinatielijst(elementenlijst,lengte):
 
 
 def pinchecker(Gokken, PCcode):
+
     Zwart = 0
     Wit = 0
     Tlijst = []
-
 
     for i in range(4):
         Tlijst.append(PCcode[i])
@@ -27,4 +27,6 @@ def pinchecker(Gokken, PCcode):
             Wit += 1
 
     return Wit, Zwart
+
+
 
